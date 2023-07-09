@@ -19,4 +19,4 @@ COPY --from=builder /opt/keycloak/ /opt/keycloak/
 COPY ./exports /opt/keycloak/data/import
 
 # Enable default admin
-ENTRYPOINT ["/opt/keycloak/bin/kc.sh"]
+ENTRYPOINT ["/opt/keycloak/bin/kc.sh", "start", "--import-realm"]
